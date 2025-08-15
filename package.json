@@ -1,0 +1,108 @@
+{
+  "name": "react-mfe-template",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Production-ready React micro frontend template with atomic design system, 95%+ quality score, and zero configuration setup",
+  "keywords": [
+    "react",
+    "micro-frontend",
+    "mfe",
+    "template",
+    "typescript",
+    "tailwind",
+    "atomic-design",
+    "vite",
+    "vitest"
+  ],
+  "author": "Jonatan Mata <jonmatum@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./types": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.d.ts",
+      "require": "./dist/index.d.cts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run clean && npm run build:lib",
+    "build:lib": "tsup",
+    "build:vite": "tsc -b && vite build",
+    "build:watch": "tsup --watch",
+    "build:analyze": "npm run build:lib -- --metafile && echo 'Build analysis complete'",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "node scripts/format.js",
+    "format:quick": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\" && eslint . --fix --quiet",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest --watch",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@testing-library/jest-dom": "^6.7.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react-swc": "^3.11.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "happy-dom": "^15.11.7",
+    "postcss": "^8.5.0",
+    "prettier": "^3.6.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.1",
+    "vite": "^5.4.19",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonmatum/react-mfe-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonmatum/react-mfe-template/issues"
+  },
+  "homepage": "https://github.com/jonmatum/react-mfe-template#readme"
+}

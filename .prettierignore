@@ -1,0 +1,17 @@
+node_modules
+dist
+coverage
+*.log
+*.lock
+.git
+.vscode
+.idea
+*.min.js
+*.min.css
+public
+.next
+.nuxt
+.cache
+.parcel-cache
+.DS_Store
+*.tsbuildinfo
